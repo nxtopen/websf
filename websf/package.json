@@ -7,6 +7,10 @@
   "scripts": {
     "build": "npm run build"
   },
+  "repository": {
+    "url": "https://github.com/nxtopen/websf"
+  },
+  "homepage": "websf.live",
   "author": "",
   "license": "UNLICENSED",
   "dependencies": {
