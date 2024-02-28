@@ -1,7 +1,7 @@
 {
   "name": "websf",
-  "version": "0.0.0",
-  "description": "Collection of useful regular expressions and validations",
+  "version": "0.0.0-readme1",
+  "description": "Ultimate web-scanning tool",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

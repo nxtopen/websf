@@ -27,8 +27,7 @@ jobs:
       - run: npm i
       - name: Bump Version and Publish
         run: |
-          git config --global user.email "gilzon.me@gmail.com"
-          git config --global user.name "Gilson Gilbert"
+          cp ./README.md ./websf/README.md
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
