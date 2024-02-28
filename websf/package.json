@@ -2,9 +2,10 @@
   "name": "websf",
   "version": "0.0.0-readme1",
   "description": "Ultimate web-scanning tool",
-  "main": "index.js",
+  "main": "dist/websf.js",
+  "types": "dist/websf.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build"
   },
   "author": "",
   "license": "UNLICENSED",
