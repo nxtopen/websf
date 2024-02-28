@@ -18,6 +18,7 @@ jobs:
       - name: Bump Version and Publish
         run: |
           cp ./README.md ./websf/README.md
+          cd ./websf
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
