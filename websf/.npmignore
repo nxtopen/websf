@@ -3,3 +3,4 @@ CHANGELOG.md
 LICENSE
 package-lock.json
 .gitignore
+src
