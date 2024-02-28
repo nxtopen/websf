@@ -1,6 +1,6 @@
 {
   "name": "websf",
-  "version": "0.0.0-readme1",
+  "version": "0.0.1",
   "description": "Ultimate web-scanning tool",
   "bin": {
     "websf": "src/websf.js"
@@ -20,5 +20,16 @@
   "devDependencies": {
     "@types/node": "^20.11.21",
     "typescript": "^5.3.3"
-  }
+  },
+  "keywords": [
+    "Web Security",
+    "Scanner",
+    "Vulnerability Analysis",
+    "Website Analysis",
+    "Security Scanner",
+    "IP Lookup",
+    "Domain Analysis",
+    "Web Security Framework"
+]
+
 }
