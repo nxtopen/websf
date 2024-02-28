@@ -1,6 +1,6 @@
 {
   "name": "websf",
-  "version": "0.0.0-readme1",
+  "version": "0.0.0-readme2",
   "description": "Ultimate web-scanning tool",
   "main": "dist/websf.js",
   "types": "dist/websf.d.ts",
