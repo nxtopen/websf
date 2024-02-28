@@ -6,7 +6,8 @@ import { getIpAndReverseLookup, getAllDnsRecords } from './utils/domain-tools.js
 program
     .version('1.0.0')
     .description('WebSF - Website Security Framework')
-    .option('-m, --mode <mode>', 'Specify the mode (cli or ui)', 'cli')
+    // .option('-m, --mode <mode>', 'Specify the mode (cli or ui)', 'cli')
+    .option('-o, --output <mode>', 'Need to export an output as json? (yes or no)', 'no')
     .argument('[website]', 'Specify the website for analysis')
     .parse(process.argv);
 
