@@ -1,5 +1,5 @@
 {
-  "name": "webforti",
+  "name": "websf",
   "version": "0.0.0",
   "description": "Collection of useful regular expressions and validations",
   "main": "index.js",
