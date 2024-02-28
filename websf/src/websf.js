@@ -4,16 +4,24 @@ import { program } from 'commander';
 import { getIpAndReverseLookup, getAllDnsRecords } from './utils/domain-tools.js';
 
 program
-    .version('1.0.0 Beta')
-    .description('WebSF - Website Scanner Framework')
+    .version('1.0.0')
+    .description('WebSF - Website Security Framework')
+    .option('-m, --mode <mode>', 'Specify the mode (cli or ui)', 'cli')
     .argument('[website]', 'Specify the website for analysis')
     .parse(process.argv);
 
-const { args } = program;
-const website = args[0];
+let { args, mode } = program;
+if (!mode) mode = 'cli'
+
+const website = args[0]; // Take the first argument as the website
 
 if (!website) {
     console.error(chalk.red('Error: Website parameter is required.'));
+    process.exit(1);
+}
+
+if (mode !== 'cli' && mode !== 'ui') {
+    console.error(chalk.red('Error: Invalid mode. Mode must be either "cli" or "ui".'));
     process.exit(1);
 }
 
