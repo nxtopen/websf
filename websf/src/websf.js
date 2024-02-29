@@ -1,46 +1,46 @@
 #!/usr/bin/env node
 import chalk from 'chalk';
 import { program } from 'commander';
-import { getAllDnsRecords } from './utils/dns.js';
-import { scanSubdomains } from './utils/subdomain.js';
+import express from 'express';
+import next from 'next';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import apiRouter from './api.js'; // Import api.js
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 program
     .version('1.0.0')
     .description('WebSF - Website Security Framework')
-    // .option('-m, --mode <mode>', 'Specify the mode (cli or ui)', 'cli')
     .option('-o, --output <mode>', 'Need to export an output as json? (yes or no)', 'no')
     .argument('[website]', 'Specify the website for analysis')
     .parse(process.argv);
 
-let { args, mode } = program;
-if (!mode) mode = 'cli'
-
-const website = args[0]; // Take the first argument as the website
-
-if (!website) {
-    console.error(chalk.red('Error: Website parameter is required.'));
-    process.exit(1);
-}
-
-if (mode !== 'cli' && mode !== 'ui') {
-    console.error(chalk.red('Error: Invalid mode. Mode must be either "cli" or "ui".'));
-    process.exit(1);
-}
-
 console.log(chalk.bgGreen.white('WebSF 1.0 Beta is starting up!'));
 
-getAllDnsRecords(website)
-    .then(DNSRecords => {
-        console.log('DNS Records:', DNSRecords);
-    })
-    .catch(err => {
-        console.error('Error:', err);
+async function start() {
+    const app = express();
+    const nextApp = next({ dev: process.env.NODE_ENV !== 'production', dir: path.resolve(__dirname, '.', 'ui') });
+    const nextHandler = nextApp.getRequestHandler();
+    await nextApp.prepare();
+
+    app.use('/_next', express.static(path.join(__dirname, 'ui', '.next')));
+
+    // Mount the apiRouter at /api
+    app.use('/api', apiRouter);
+
+    app.get('*', (req, res) => {
+        return nextHandler(req, res);
     });
 
-scanSubdomains(website)
-    .then(subdomains => {
-        console.log('Subdomains', subdomains);
-    })
-    .catch(err => {
-        console.error('Error:', err);
+    app.listen(process.env.PORT || 1994, () => {
+        console.log(`
+      +++++++++++++++++++++++++++++++++++++++++++++++++++\n
+      +---- Server running on http://localhost:${process.env.PORT || 1994} ----+\n
+      +++++++++++++++++++++++++++++++++++++++++++++++++++\n
+      `);
     });
+}
+
+start();

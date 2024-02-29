@@ -16,9 +16,7 @@
     "chalk": "^5.3.0",
     "cli-progress": "^3.12.0",
     "cli-table3": "^0.6.3",
-    "commander": "^12.0.0",
-    "p-map": "^7.0.1",
-    "subscan": "^1.0.2"
+    "commander": "^12.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.21",
