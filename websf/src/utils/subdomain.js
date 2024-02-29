@@ -69,9 +69,13 @@ async function scanSubdomains(domain) {
             combinedResult = avResult;
         }
 
-        return { 'count':combinedResult.length,'subdomains':combinedResult};
+        // Validate each subdomain and filter out invalid ones
+        const validSubdomains = combinedResult.filter(sub => new RegExp(`^[^.]+.${domain}$`).test(sub));
+
+        return { 'count': validSubdomains.length, 'subdomains': validSubdomains };
     } catch (error) {
-        throw error;
+        console.error("Error in scanSubdomains:", error);
+        return { 'count': 0, 'subdomains': [] }; // Return empty response
     }
 }
 
