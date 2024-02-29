@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 import chalk from 'chalk';
 import { program } from 'commander';
-import { getIpAndReverseLookup, getAllDnsRecords } from './utils/domain-tools.js';
+import { getAllDnsRecords } from './utils/dns.js';
+import { scanSubdomains } from './utils/subdomain.js';
 
 program
     .version('1.0.0')
@@ -28,17 +29,17 @@ if (mode !== 'cli' && mode !== 'ui') {
 
 console.log(chalk.bgGreen.white('WebSF 1.0 Beta is starting up!'));
 
-getIpAndReverseLookup(website)
-    .then(reverseIpList => {
-        console.log('Reverse IP Lookup:', reverseIpList);
+getAllDnsRecords(website)
+    .then(DNSRecords => {
+        console.log('DNS Records:', DNSRecords);
     })
     .catch(err => {
         console.error('Error:', err);
     });
 
-getAllDnsRecords(website)
-    .then(DNSRecords => {
-        console.log('DNS Records:', DNSRecords);
+scanSubdomains(website)
+    .then(subdomains => {
+        console.log('Subdomains', subdomains);
     })
     .catch(err => {
         console.error('Error:', err);
