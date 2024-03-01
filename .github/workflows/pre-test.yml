@@ -6,7 +6,9 @@ on:
       - main
   pull_request:
     branches:
-      - main
+      - '*'
+  schedule:
+    - cron: "0 * * * *"
 
 jobs:
   test:
@@ -36,7 +38,7 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
 
-      - name: Build Package
+      - name: Build & Test Package
         run: |
             cd ./websf
             npm i
