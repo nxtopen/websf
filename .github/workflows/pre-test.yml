@@ -42,14 +42,8 @@ jobs:
             npm i
             npm run build
             npm link
-
-      - name: Link Package
-        run: |
             cd ..
             cd test
             npm i
             npm link websf
-
-      - name: Test Package
-        run: |
             npm run test
