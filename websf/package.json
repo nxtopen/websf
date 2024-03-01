@@ -1,10 +1,9 @@
 {
   "name": "websf",
   "version": "0.0.1",
-  "description": "Ultimate web-scanning tool",
-  "bin": {
-    "websf": "src/websf.js"
-  },
+  "description": "OSINT Framework for Website Scanning",
+  "main": "./dist/websf.js",
+  "types": "./dist/websf.d.ts",
   "type": "module",
   "repository": {
     "url": "https://github.com/nxtopen/websf"
@@ -13,7 +12,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "axios": "^1.6.7"
+    "axios": "^1.6.7",
+    "puppeteer": "^22.3.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.24",
@@ -27,6 +27,8 @@
     "Security Scanner",
     "IP Lookup",
     "Domain Analysis",
-    "Web Security Framework"
+    "Web Security Framework",
+    "OSINT",
+    "WebSF"
   ]
 }
