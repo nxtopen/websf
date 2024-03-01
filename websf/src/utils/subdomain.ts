@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-async function certShSubdomains(domain:string) {
+async function certShSubdomains(domain: string) {
     try {
         const url = `https://crt.sh/?q=${domain}&output=json`;
         const response = await axios.get(url);
@@ -12,7 +12,7 @@ async function certShSubdomains(domain:string) {
     }
 }
 
-async function avSubdomains(domain:string) {
+async function avSubdomains(domain: string) {
     try {
         const url = `https://otx.alienvault.com/api/v1/indicators/domain/${domain}/passive_dns`;
         const response = await axios.get(url);
@@ -24,14 +24,14 @@ async function avSubdomains(domain:string) {
     }
 }
 
-async function scanSubdomains(domain:string) {
+async function scanSubdomains(domain: string) {
     try {
         const [certShResult, avResult] = await Promise.all([
             certShSubdomains(domain),
             avSubdomains(domain)
         ]);
 
-        let combinedResult:any = [];
+        let combinedResult: any = [];
 
         if (certShResult.length > 0 && avResult.length > 0) {
             combinedResult = [...new Set([...certShResult, ...avResult])];
