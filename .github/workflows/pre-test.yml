@@ -49,4 +49,7 @@ jobs:
             cd test
             npm i
             npm link websf
+
+      - name: Test Package
+        run: |
             npm run test
