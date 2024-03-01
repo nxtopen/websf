@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "ts": "npx ts-node index.ts",
-    "node": "node index.ts"
+    "test": "npx ts-node index.ts && node index.ts"
   },
   "author": "",
   "license": "ISC",
