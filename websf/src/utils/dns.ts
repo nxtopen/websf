@@ -1,4 +1,4 @@
-import dns from 'dns';
+import * as dns from 'dns';
 
 async function dnsLookup(website) {
     return new Promise((resolve, reject) => {
