@@ -4,7 +4,10 @@
   "description": "OSINT Framework for Website Scanning",
   "main": "./dist/websf.js",
   "types": "./dist/websf.d.ts",
-  "type": "module",
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc"
+  },
   "repository": {
     "url": "https://github.com/nxtopen/websf"
   },
@@ -16,6 +19,7 @@
     "puppeteer": "^22.3.0"
   },
   "devDependencies": {
+    "@types/jest": "^29.5.12",
     "@types/node": "^20.11.24",
     "typescript": "^5.3.3"
   },

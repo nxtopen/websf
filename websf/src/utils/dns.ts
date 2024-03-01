@@ -1,17 +1,5 @@
 import * as dns from 'dns';
 
-async function dnsLookup(website) {
-    return new Promise((resolve, reject) => {
-        dns.lookup(website, (err, address) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(address);
-            }
-        });
-    });
-}
-
 async function getAllDnsRecords(website) {
     return new Promise((resolve, reject) => {
         const records = {
@@ -66,4 +54,4 @@ async function getAllDnsRecords(website) {
     });
 }
 
-export { dnsLookup, getAllDnsRecords };
+export { getAllDnsRecords };
