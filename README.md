@@ -1,10 +1,15 @@
-# Web Security Scanner Framework
+# WebSF - Web Security Scanner Framework
 
-An open-source framework built (with open-source plugins and custom-developed code) for scanning a website, analyzing vulnerabilities and safety with various mechanisms, and providing a comprehensive report regarding the website.
+An open-source framework built (with open-source plugins, open-apis and custom-developed code) for scanning a website, analyzing vulnerabilities and safety with through mechanisms. As said "framework" developers can utilize this plugin for the development of various tools or with any of the application that requires such features.
 
-#### Warning ⚠️ Use the tool at your own risk as the information collected is not directly verified by any of the developers/providers. Use the information for security analysis and research purposes only.
+## Features
+- DNS Records
+- Website IP Finder
+- Reverese IP Lookup
 
-### Usage
+## Usage
+
+### CLI
 
 ```bash
 npm install -g websf
@@ -19,7 +24,8 @@ Options:
   -h, --help             display help for command
 ```
 
-## Features
-- DNS Records
-- Website IP Finder
-- Reverese IP Lookup
+
+### Development
+
+To Be Updated Soon...
+

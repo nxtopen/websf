@@ -6,12 +6,10 @@ async function certShSubdomains(domain) {
         https.get(url, (response) => {
             let data = '';
 
-            // A chunk of data has been received
             response.on('data', (chunk) => {
                 data += chunk;
             });
 
-            // The whole response has been received
             response.on('end', () => {
                 try {
                     const jsonArray = JSON.parse(data);
