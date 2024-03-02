@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./actions/pretest@main
+      - uses: ./.github/workflows/actions/pre-test@main
 
   npm_publish:
     name: NPM Publish
@@ -19,4 +19,4 @@ jobs:
     needs: pre_test
     steps:
       - uses: actions/checkout@v4
-      - uses: ./actions/publish@main
+      - uses: ./.github/workflows/actions/publish@main
