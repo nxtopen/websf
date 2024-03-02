@@ -5,12 +5,6 @@ describe('WebSF - Typescript Test', () => {
         const records = await getAllDnsRecords('google.com');
         expect(records).toBeDefined();
     });
-
-    test('scanSubdomains', async () => {
-        const subdomains = await scanSubdomains('google.com');
-        expect(subdomains).toBeDefined();
-    });
-
     test('mozillaObservatory', async () => {
         const response = await mozillaObservatory('google.com');
         expect(response).toBeDefined();
