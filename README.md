@@ -9,23 +9,18 @@ An open-source framework built (with open-source plugins, open-apis and custom-d
 
 ## Usage
 
-### CLI
-
-```bash
-npm install -g websf
-```
-
-```bash
-websf [options] [website]
-
-Options:
-  -V, --version          output the version number
-  -m, --mode <mode>      Specify the mode (cli or ui) (default: "cli")
-  -h, --help             display help for command
-```
-
-
 ### Development
 
-To Be Updated Soon...
+See all the functions at websf.
 
+#### Typescript
+
+```bash
+import { getAllDnsRecords, scanSubdomains, mozillaObservatory } from 'websf';
+```
+
+#### Javascript
+
+```bash
+const { getAllDnsRecords, scanSubdomains, mozillaObservatory } = require('websf');
+```
