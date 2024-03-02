@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./actions/pre-test.yml
+      - uses: pre-test.yml
 
   npm_publish:
     name: NPM Publish
@@ -19,4 +19,4 @@ jobs:
     needs: pre_test
     steps:
       - uses: actions/checkout@v4
-      - uses: ./actions/npm-publish.yml
+      - uses: npm-publish.yml
