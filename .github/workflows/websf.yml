@@ -10,11 +10,11 @@ jobs:
     name: Pre-Test
     runs-on: ubuntu-latest
     steps:
-        - name: Checkout Repository
-          uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-        - name: Pre-Test
-          uses: pre-test.yml
+      - name: Pre-Test
+        uses: ./pre-test.yml
 
   npm_publish:
     name: NPM Publish
@@ -25,4 +25,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: NPM Publish
-        uses: npm-publish.yml
+        uses: ./npm-publish.yml
